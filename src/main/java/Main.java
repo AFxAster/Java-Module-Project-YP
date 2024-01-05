@@ -1,6 +1,9 @@
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        int amount = UserData.getNumbOfPeople();
+        Calculator calculator = new Calculator(amount);
+        calculator.addItems();
+        calculator.printCheck();
     }
+
 }
