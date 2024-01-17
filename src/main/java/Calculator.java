@@ -13,11 +13,12 @@ public class Calculator {
     }
 
     public void printCheck() {
+        Format format = new Format();
         System.out.println("Добавленные товары:");
         System.out.println(items.toString());
 
-        double payment = Format.round(sum / amount, 2);
-        System.out.println("Каждый человек должен заплатить " + payment + " " + Format.getEnding((int) payment) + ".");
+        double payment = format.round(sum / amount, 2);
+        System.out.println("Каждый человек должен заплатить " + payment + " " + format.getEnding((int) payment) + ".");
     }
 
     public void addItems() {
@@ -32,13 +33,13 @@ public class Calculator {
     }
 
     private void addItem() {
-        String name = UserData.getName();
-        double price = UserData.getValidPrice();
+        Format format = new Format();
+        UserData userData = new UserData();
+        String name = userData.getName();
+        double price = userData.getValidPrice();
         sum += price;
         items.append(name).append(". Cтоимость - ").append(price)
-                .append(" ").append(Format.getEnding((int) price)).append(".\n");
+                .append(" ").append(format.getEnding((int) price)).append(".\n");
         System.out.println("Товар \"" + name + "\" был успешно добавлен.");
     }
-
-
 }

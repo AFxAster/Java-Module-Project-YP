@@ -1,5 +1,5 @@
 public class Format {
-    public static String getEnding(int n) {
+    public String getEnding(int n) {
         if (11 <= n % 100 && n % 100 <= 14) {
             return "рублей";
         } else if (n % 10 == 1) {
@@ -10,7 +10,7 @@ public class Format {
         return "рублей";
     }
 
-    public static double round(double n, int decimalPlace) {
+    public double round(double n, int decimalPlace) {
         return Math.round(n * Math.pow(10, decimalPlace)) / Math.pow(10, decimalPlace);
     }
 }

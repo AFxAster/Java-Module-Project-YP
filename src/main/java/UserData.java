@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class UserData {
 
-    public static int getNumbOfPeople() {
+    public int getNumbOfPeople() {
         System.out.println("На скольких человек необходимо разделить счёт?");
         Scanner scanner = new Scanner(System.in);
         int amount;
@@ -24,7 +24,7 @@ public class UserData {
             }
         }
     }
-    public static double getValidPrice() {
+    public double getValidPrice() {
         System.out.println("Укажите стоимость товара:");
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
         double price;
@@ -41,7 +41,7 @@ public class UserData {
             System.out.println("Цена должна быть неотрицательной.");
         }
     }
-    public static String getName() {
+    public String getName() {
         System.out.println("Введите наименование товара:");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
